@@ -20,7 +20,8 @@ The REST Call to the `transfer` API is triggered as a `POST` call as below:
 - `URL` : http://localhost:8080/BankTransfer/transfer
 - `Content Type` : application/json
 - `Request BODY Sample` : 
-```{
+```
+{
   "fromAccount": 1,
   "toAccount": 2,
   "amount": 100
@@ -30,7 +31,8 @@ The REST Call to the `transfer` API is triggered as a `POST` call as below:
 The sql dump for a sample DB with 2 accounts that was setup and used can be found in the root directory of the project by the name `bankdb.sql`.
 
 The Sample Response is as below:
-```{
+```
+{
   "transactionId": 47,
   "from":{
     "id": 1,
