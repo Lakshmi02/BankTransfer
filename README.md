@@ -55,18 +55,18 @@ The Custom Exception implemented is `TransferException` which will send 1 of the
 
 # Considerations met in the implementation
 
--What happens under high concurrency?
+- What happens under high concurrency? <br/>
 The Connection Pooling properties are set in the sprint-servlet.xml file for connection pooling
 The `initialSize` property has been set to `2` as of now and the `maxActive` property has been set to `20`.
 These values can be varied as per the application requirements for high concurrency.
  
-- What happens if your database becomes unavailable in the middle of your logic?
+- What happens if your database becomes unavailable in the middle of your logic? <br/>
 This has been handled by including all the steps in a `Single Transaction` and `Roll-back` in-case of any issues during the execution.
 
-- What happens if 2 users (A, B) transfer money to user C at the same time?
+- What happens if 2 users (A, B) transfer money to user C at the same time?<br/>
 This has been handled by synchronizing the update on the Balance table object.
 
-- How do you handle and structure the errors that you return to the client?
+- How do you handle and structure the errors that you return to the client?<br/>
 Custom Exception Class is written by the name `TransferException` and proper error messages are passed in to the Exception object. while handling the Exception the RestController class, specific error codes are set and the error message is sent in JSON format as ResponseEntity.
 
 
